@@ -5,43 +5,43 @@ function getRandomHexColor() {
 const controlsEl = document.querySelector('#controls')
 const inputEl = document.querySelector('#controls > input')
 const boxesEl = document.querySelector('#boxes')
+const createOption = document.querySelector('#controls > button')
+const destroyOption = document.querySelector('#controls > button ~ button')
 
 controlsEl.addEventListener('input', manageButtons)
 
-let amount = []
+let totalAmount = 0
+
+
+
 
 function manageButtons () {
-  const createOption = document.querySelector('#controls > button')
-  const destroyOption = document.querySelector('#controls > button ~ button')
-
   destroyOption.addEventListener('click', () => {
-    inputEl.value = 0
+    innerHTML = ''
   })
 
   createOption.addEventListener('click', () => {
-    // amount = inputEl.value
-    amount.push(1)
-    console.log(amount)
+    totalAmount += 1
+    // console.log(totalAmount)
   })
+
+  return totalAmount
 }
 
 
+
+
+function createBoxes(amount) {
+const divWidth = "30px";
+
   for (let item of amount) {
-    document.createElement("div")
+    item = document.createElement("div")
+    document.boxesEl.appendChild(newDiv);
+    newDiv.style.width = divWidth
+    newDiv.style.backgroundColor = getRandomHexColor
 
   }
 
-// function createBoxes(amount) {
-//   document.createElement("div")*amount
-// }
+}
 
-// createBoxes(amount)
-
-// boxesEl.insertAdjacentHTML("afterbegin", (amount) => {
-//   document.createElement("div")*amount
-// })
-
-// const boxEl = document.createElement("div")
-
-// boxesEl.append(boxEl)
-// console.log(boxesEl)
+// createBoxes(totalAmount)

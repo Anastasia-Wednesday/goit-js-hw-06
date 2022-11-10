@@ -4,5 +4,10 @@ const outputEl = document.querySelector('#name-output')
 inputEl.addEventListener('input', outputChange)
 
 function outputChange (event) {
-    outputEl.textContent = event.currentTarget.value
+    if (event.currentTarget.value != "") {
+        outputEl.textContent = event.currentTarget.value
+            } else {
+        outputEl.textContent = "Anonymous"
+        }
+    
 }
